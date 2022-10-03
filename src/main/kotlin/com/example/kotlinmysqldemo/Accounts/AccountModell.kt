@@ -13,7 +13,3 @@ data class Account(
     val id:Long = 0,
     val name:String
 )
-
-data class CreateAccount(
-    val name: String
-)

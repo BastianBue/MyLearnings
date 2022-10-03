@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
-
 @RestController
 @RequestMapping("/accounts")
 class AccountController(
@@ -18,7 +17,6 @@ class AccountController(
 
     @PostMapping("/create")
     fun createAccount(@RequestParam name: String): Account {
-        // TODO handle exception when no params are passed
         return accountRepository.save(Account(name = name))
     }
 

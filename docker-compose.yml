@@ -12,8 +12,9 @@ services:
     expose:
       - "3307"
     volumes:
-      - /Users/bastian.bueld/Desktop/DemoProjects/KotlinMySqlDemo/docker/mysql/conf.d:/etc/mysql/conf.d
-      - /Users/bastian.bueld/Desktop/DemoProjects/KotlinMySqlDemo/docker/mysql/data:/var/lib/mysql
+      - ./docker/mysql/conf.d:/etc/mysql/conf.d
+      - ./docker/mysql/data:/var/lib/mysql
+      - ./dokcer/mysql/application:/data/application
   adminer:
     image: adminer
     restart: always

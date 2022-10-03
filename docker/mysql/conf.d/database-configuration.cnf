@@ -1,1 +1,2 @@
-my-custom.cnf
+[mysqld]
+max_connections=250

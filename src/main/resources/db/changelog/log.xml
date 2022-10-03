@@ -12,5 +12,24 @@
                 <constraints nullable="false"/>
             </column>
         </createTable>
+        <createTable tableName="learning">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="title" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="body" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="learning_tags">
+            <column name="learning_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tags" type="varchar(255)" >
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
     </changeSet>
 </databaseChangeLog>
