@@ -2,7 +2,6 @@ package com.example.kotlinmysqldemo.Learnings
 
 import javax.persistence.*
 
-
 @Entity
 data class Learning(
     @Id
@@ -11,7 +10,8 @@ data class Learning(
     val title: String,
     val body: String,
     @ElementCollection
-    val tags: List<String> = listOf()
+    val tags: List<String> = listOf(),
+
 )
 
 //@Embeddable

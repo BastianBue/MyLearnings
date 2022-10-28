@@ -3,6 +3,7 @@ package com.example.kotlinmysqldemo.Learnings
 import org.springframework.web.bind.annotation.*
 import java.util.*
 
+@CrossOrigin(origins = ["http://localhost:3000"])
 @RestController
 @RequestMapping("/learnings")
 class LearningsController(val learningsRepository: LearningsRepository) {
@@ -12,7 +13,7 @@ class LearningsController(val learningsRepository: LearningsRepository) {
         return learningsRepository.findAll()
     }
 
-    @GetMapping("id/{id}")
+    @GetMapping("/{id}")
     fun getLearningById(@PathVariable id: Long): Optional<Learning> {
         return learningsRepository.findById(id)
     }
@@ -22,7 +23,7 @@ class LearningsController(val learningsRepository: LearningsRepository) {
         return learningsRepository.retrieveByTag(tag)
     }
 
-    @PostMapping()
+    @PostMapping
     fun createLearning(
         @RequestParam title: String,
         @RequestParam body: String,
